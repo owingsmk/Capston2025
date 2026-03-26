@@ -1,14 +1,8 @@
 Uses Write-Output only (no Write-Host).
 
-Dot-sources modules, centralizes logging, and supports GUI or CLI.
+Supports GUI or CLI.
 
-Every check returns a simple object you can render in HTML later: Name, Status, Severity, Details, Remediation.
+Scripts run from the Script Center in the GUI must be run with administrator account as they make system changes.
+Reports run from the Reports Center in the GUI do not need to be run with an administrator account and do not make any system changes.
 
-
-Notes / How to extend
-
-Add more checks as separate Modules/*.ps1 files that return New-CheckResult objects so the GUI/CLI can aggregate consistently.
-
-“Enforcement” paths are gated behind -AuditOnly:$false or -WhatIf:$false to keep things safe for demos.
-
-For HTML output, pipe the results to a small renderer later; the uniform object makes that easy.
+The Windows Security Toolkit is a University of Cincinnati student capstone project.
